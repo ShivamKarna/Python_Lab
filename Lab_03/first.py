@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+import pandas as pd
 
 # Data
 x = np.linspace(0, 20, 100)
@@ -51,8 +52,12 @@ model.fit(x_train,y_train)
 
 print(f"Number of dimensions of x_train is: {x_train.ndim}")
 
+print(model.predict([[30]]))
 
 
+df = pd.read_csv("./archive/Salary_Data.csv")
+
+df.head()
 
 plt.savefig("plot.png")
 print("Plot saved successfully as plot.png")
